@@ -30,11 +30,11 @@ def maid_node(state: MaidState) -> MaidState:
     return {
         "messages":[response]
     }
+def build_graph(checkpointer):
+    builder = StateGraph(MaidState)
 
-builder = StateGraph(MaidState)
-builder.add_node("maid",maid_node)
+    builder.add_node("maid",maid_node)
 
-builder.add_edge(START,"maid")
-builder.add_edge("maid",END)
-
-graph = builder.compile()
+    builder.add_edge(START,"maid")
+    builder.add_edge("maid",END)
+    return builder.compile(checkpointer=checkpointer)
