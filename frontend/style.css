@@ -1,36 +1,141 @@
-body {
-    width: 700px;
-    margin: 40px auto;
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #263858;
+    background: linear-gradient(135deg, #edf4ff, #f8faff, #e8f0ff);
+}
 h1 {
     text-align: center;
+    margin: 10px 0 28px;
+
+    font-size: 32px;
+    font-weight: 600;
+    color: #234477;
+    letter-spacing: 2px;
 }
 
 .chat {
-    border: 1px solid #ccc;
-    padding: 20px;
-    min-height: 400px;
+    width: 100%;
+    max-width: 1000px;
+    height: 65vh;
+    min-height: 350px;
+    margin: 0 auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #dce8fa;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(67, 103, 160, 0.10);
+    overflow-y: auto;
 }
 
-.message {
-    margin-bottom: 15px;
-}
+.AIMessage,.userMessage {
+    width: fit-content;
+    max-width: 75%;
 
-.input-area {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-}
+    margin-bottom: 18px;
+    padding: 14px 20px;
 
-input {
-    flex: 1;
-    padding: 10px;
+    background: #edf4ff;
+    border-radius: 6px 16px 16px 16px;
+
+    color: #263e68;
     font-size: 16px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 
-button {
-    padding: 10px 20px;
+.AIMessage p,.userMessage p {
+    margin: 0;
+}
+
+.userMessage{
+    margin-left: auto;
+    background-color: #3978f6;
+    color: white;
+    border-radius: 16px 6px 16px 16px;
+}
+.input-area {
+    display: flex;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 16px auto 0;
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dce8fa;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 20px rgba(67, 103, 160, 0.08);
+}
+
+.input-area input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+
+    border: 1px solid #dce6f6;
+    border-radius: 10px;
+    outline: none;
+
+    background: #ffffff;
+    color: #263858;
+    font-size: 16px;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-area input::placeholder {
+    color: #9aaac3;
+}
+
+.input-area input:focus {
+    border-color: #6c9cff;
+    box-shadow: 0 0 0 3px rgba(76, 130, 255, 0.12);
+}
+
+
+.input-area button {
+    padding: 0 26px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #3978f6;
+    color: white;
+
+    font-size: 16px;
     cursor: pointer;
+
+    transition: background 0.2s, transform 0.2s;
+}
+
+.input-area button:hover {
+    background: #2864df;
+}
+
+.input-area button:active {
+    transform: scale(0.97);
+}
+
+
+.chat::-webkit-scrollbar {
+    width: 7px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #d5e1f4;
+    border-radius: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb:hover {
+    background: #b5c9e9;
 }
